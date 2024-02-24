@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- res/values/colors.xml -->
+    <color name="availableColor">#FFFFFF </color> <!-- Gray for available -->
+    <color name="selectedBackgroundColor">#FFFFFF</color> <!-- White for selected -->
+    <color name="selectedBorderColor">#279df2</color> <!-- Blue border for selected -->
+    <color name="unavailableColor">#808080</color> <!-- gray for unavailable -->
+
+</resources>

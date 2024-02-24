@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/movie_page_layout.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backbutton"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:translationZ="2000dp"
+        android:id="@+id/backButton"/>
+    <!-- Movie Poster -->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:id="@+id/posterContainer"
+        android:layout_alignParentTop="true"
+
+        >
+        <ImageView
+            android:id="@+id/moviePoster"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="-30dp"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Movie Information Container -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:id="@+id/movieInformation"
+        android:translationZ="2dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="30dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+
+
+            >
+
+            <!-- Movie Name -->
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:text="Movie Name"
+                android:maxLines="2"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/sypnosisHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movieName"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="30dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/corner_grayborder"
+                    android:gravity="center"
+                    android:text="Date"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#5A5A5A"
+                    android:textSize="16sp"
+                    android:id="@+id/dateTextView"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/corner_grayborder"
+                    android:gravity="center"
+                    android:text="Time"
+                    android:textColor="#5A5A5A"
+                    android:textSize="16sp"
+                    android:id="@+id/timeTextView"/>
+            </LinearLayout>
+
+            <!-- Description (with Read More button) -->
+            <TextView
+                android:id="@+id/cinemaTextView"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:layout_below="@id/sypnosisHeader"
+
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/corner_grayborder"
+                android:gravity="center"
+                android:text="Cinema Name"
+                android:textColor="#5A5A5A"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- List of Dates -->
+    <LinearLayout
+        android:id="@+id/leggendSeat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movieInformation"
+        android:layout_marginTop="3dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="50dp">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@drawable/circle_available"
+                android:id="@+id/circleAvailable"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:text="Available"
+                android:textAlignment="center"
+                android:layout_toRightOf="@id/circleAvailable"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@drawable/circle_reserved"
+                android:id="@+id/circleUnavailable"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:text="Reserved"
+                android:textAlignment="center"
+                android:layout_toRightOf="@id/circleUnavailable"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:gravity="center"
+            >
+            <View
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:background="@drawable/circle_selected"
+                android:id="@+id/circleSelected"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+            />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:text="Selected"
+                android:textAlignment="center"
+                android:layout_toRightOf="@id/circleSelected"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#f0c44a"
+        android:layout_below="@id/leggendSeat"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="7dp"
+        android:id="@+id/screen">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="SCREEN"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="13dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+    <!-- List of Cinemas and Show Times (customize as needed) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_below="@id/screen"
+        android:layout_marginTop="10dp"
+        android:id="@+id/seatGrid"
+        android:numColumns="auto_fit"
+        android:padding="10dp"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/totalInfo"
+        android:paddingHorizontal="20dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/numContainer"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/quantityTextBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="Ticket: "
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ticketNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="53dp"
+                android:layout_toRightOf="@id/quantityTextBox"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numContainer"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/totalTextBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/quantityTextBox"
+                android:layout_alignParentStart="true"
+                android:gravity="center"
+                android:text="Total VND: "
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/totalTextBox"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/myNextButton1"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:translationZ="2000dp"
+        android:src="@drawable/rightarrow"
+        android:background="@drawable/circle_selected"/>
+
+    <RelativeLayout
+        android:id="@+id/confirmBox"
+        android:layout_width="278dp"
+        android:layout_height="312dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/corner_grayborder"
+        android:translationZ="9000dp"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/confirmText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="Confirm purchase"
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/selectedSeatsArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/confirmText"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="Selected: "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allSelectedSeats"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="15dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/totalCostArea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/selectedSeatsArea"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+
+                android:text="Total VND: "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/totalMoneyConfirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/phoneBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/totalCostArea"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+
+                android:text="Phone: "
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:text="Enter here"
+                android:textColor="#8C8282"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="260dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/phoneBox"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cancelbuttonContainer"
+                android:layout_width="90dp"
+                android:layout_height="42dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="10dp"
+                android:onClick="onCancelClick"
+                app:cardBackgroundColor="#FF5252"
+                app:cardCornerRadius="20px"
+                app:cardElevation="30px">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Cancel"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="102dp"
+                android:layout_height="42dp"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toRightOf="@id/cancelbuttonContainer"
+                android:onClick="onConfirmClick"
+                app:cardBackgroundColor="#7FE606"
+                app:cardCornerRadius="20px"
+                app:cardElevation="30px">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:text="Confirm"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

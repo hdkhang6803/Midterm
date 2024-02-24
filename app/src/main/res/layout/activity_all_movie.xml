@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/mainHome"
+    android:background="@color/white">
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:id="@+id/header_title">
+
+        <!-- Left side: "Now Showing" header and "Movies in Chennai" phrase -->
+        <LinearLayout
+            android:id="@+id/leftContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- "Now Showing" header -->
+            <TextView
+                android:id="@+id/textViewNowShowing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Now Showing"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+
+            <!-- "Movies in Chennai" phrase with Toggle list icon -->
+            <RelativeLayout
+                android:id="@+id/relativeLayoutPhrase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <!-- Toggle list icon -->
+                <ImageView
+                    android:id="@+id/imageViewToggleList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"/>
+
+                <!-- Phrase "Movies in Chennai" -->
+                <TextView
+                    android:id="@+id/textViewPhrase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/imageViewToggleList"
+                    android:text="Movies in Chennai"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:textColor="@color/black"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!-- Right side: Avatar in a circle shape and Menu icon -->
+        <LinearLayout
+            android:id="@+id/rightContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true">
+
+
+
+            <!-- Avatar of the user (in a circle shape) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="12dp"
+                android:id="@+id/view2"
+                app:cardCornerRadius="40dp"
+                android:layout_centerHorizontal="true"
+                android:innerRadius="0dp"
+                android:shape="ring"
+                android:thicknessRatio="1.9">
+                <ImageView
+                    android:id="@+id/imageViewUserAvatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:background="@drawable/ic_launcher_background"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Menu icon -->
+            <ImageView
+                android:id="@+id/imageViewMenuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menuicon"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+    </RelativeLayout>
+<!--    <SearchView>-->
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="5dp"
+        android:id="@+id/allMovieHeader"
+        android:layout_below="@id/header_title">
+
+        <android.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Search movies"
+            android:elevation="4dp"
+            android:background="#ebedf0"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="300dp"
+            android:layout_height="400dp"
+            android:layout_below="@id/searchView"
+            android:visibility="invisible"
+            android:id="@+id/movieNameLV"
+            android:translationZ="3dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:layout_below="@id/searchView"
+            />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

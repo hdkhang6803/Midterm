@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+
+    <!-- Movie Names -->
+    <string-array name="movieNames">
+        <item>Ant\-Man and the Wasp: Quantumania</item>
+        <item>Black Panther: Wakanda Forever</item>
+        <item>Thor: Love and Thunder</item>
+        <item>Doctor Strange in the Multiverse of Madness</item>
+        <item>Spider\-Man: No Way Home</item>
+        <item>Eternals</item>
+        <item>Guardians of the Galaxy Vol. 3</item>
+        <!-- Add more items as needed -->
+    </string-array>
+
+    <!-- Movie Durations -->
+    <string-array name="movieDurations">
+        <item>2h 04m</item>
+        <item>1h 45m</item>
+        <item>2h 15m</item>
+        <item>2h 30m</item>
+        <item>1h 50m</item>
+        <item>2h 50m</item>
+        <item>2h 15m</item>
+        <!-- Add more items as needed -->
+    </string-array>
+
+    <!-- Movie Release Dates -->
+    <string-array name="movieReleaseDates">
+        <item>2023\-02\-17</item>
+        <item>2022\-11\-11</item>
+        <item>2023\-07\-08</item>
+        <item>2023\-05\-06</item>
+        <item>2021\-11\-25</item>
+        <item>2022\-11\-05</item>
+        <item>2023\-05\-05</item>
+        <!-- Add more items as needed -->
+    </string-array>
+
+    <!-- Movie Poster Resource IDs -->
+    <integer-array name="moviePosters">
+        <item>@drawable/quantumania</item>
+        <item>@drawable/wakandaforever</item>
+        <item>@drawable/lovethunder</item>
+        <item>@drawable/multiversemadness</item>
+        <item>@drawable/nowayhome</item>
+        <item>@drawable/eternal</item>
+        <item>@drawable/gotgvol3</item>
+        <!-- Add more items as needed -->
+    </integer-array>
+
+    <!-- Movie Descriptions -->
+    <string-array name="movieDescriptions">
+        <item>In the film, which officially kicks off phase 5 of the Marvel Cinematic Universe, Super\-Hero partners Scott Lang and Hope Van Dyne return to continue their adventures as Ant\-Man and the Wasp. Together, with Hope\'s parents Hank Pym and Janet Van Dyne, the family finds themselves exploring the Quantum Realm, interacting with strange new creatures and embarking on an adventure that will push them beyond the limits of what they thought was possible. Jonathan Majors joins the adventure as Kang.</item>
+        <item>Queen Ramonda (Angela Bassett), Shuri (Letitia Wright), M\'Baku (Winston Duke), Okoye (Danai Gurira) and the Dora Milaje (including Florence Kasumba), fight to protect their nation from intervening world powers in the wake of King T\'Challa\'s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia (Lupita Nyong\'o) and Everett Ross (Martin Freeman) and forge a new path for the kingdom of Wakanda.</item>
+        <item>Marvel Studios\' “Thor: Love and Thunder” finds the God of Thunder on a journey unlike anything he\'s ever faced—one of self\-discovery. But his efforts are interrupted by a galactic killer known as Gorr the God Butcher, who seeks the extinction of the gods. To combat the threat, Thor enlists the help of King Valkyrie, Korg and ex\-girlfriend Jane Foster, who—to Thor\'s surprise—inexplicably wields his magical hammer, Mjolnir, as the Mighty Thor.</item>
+        <item>Marvel Studios\' "Doctor Strange in the Multiverse of Madness"—a thrilling ride through the Multiverse with Doctor Strange, his trusted friend Wong and Wanda Maximoff, aka Scarlet Witch. "Doctor Strange in the Multiverse of Madness" opens in U.S. theaters on May 6, 2022</item>
+        <item>The best of “Spider\-Man: No Way Home” reminded me why I used to love comic books, especially the ones about a boy named Peter Parker. There was a playful unpredictability to them that has often been missing from modern superhero movies, which feel so precisely calculated. Yes, of course, “No Way Home” is incredibly calculated, a way to make more headlines after killing off so many of its event characters in Phase 3, but it\'s also a film that\'s often bursting with creative joy.</item>
+        <item>Marvel Studios\' Eternals features an exciting new team of Super Heroes in the Marvel Cinematic Universe, ancient aliens who have been living on Earth in secret for thousands of years. Following the events of Avengers: Endgame, an unexpected tragedy forces them out of the shadows to reunite against mankind\'s most ancient enemy, the Deviants.</item>
+        <item>In Marvel Studios "Guardians of the Galaxy Vol. 3" our beloved band of misfits are looking a bit different these days. Peter Quill, still reeling from the loss of Gamora, must rally his team around him to defend the universe along with protecting one of their own. A mission that, if not completed successfully, could quite possibly lead to the end of the Guardians as we know them.</item>
+        <!-- Add more items as needed -->
+    </string-array>
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "800403205069",
+    "project_id": "plasma-elf-404501",
+    "storage_bucket": "plasma-elf-404501.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800403205069:android:cc217ba0d7dd2d5f193284",
+        "android_client_info": {
+          "package_name": "com.example.midterm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS5oLozcNhLqNxSYlygYCIKui0b2wxITU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

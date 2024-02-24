@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/movie_page_layout.xml -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/backbutton"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:translationZ="2000dp"
+        android:id="@+id/backButton1"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:id="@+id/posterContainer"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-10dp"
+
+        >
+        <ImageView
+            android:id="@+id/moviePoster"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Movie Information Container -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="30dp"
+        android:translationZ="10dp"
+        android:id="@+id/movieInformation"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:translationZ="11dp"
+            android:background="@color/white"
+            >
+
+            <!-- Movie Name -->
+            <TextView
+                android:id="@+id/movieName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Movie Name"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/movieName"
+                android:layout_centerInParent="true"
+                android:id="@+id/trivialHeader"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:src="@drawable/star"/>
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.9"
+                    android:textColor="#B5AFAF"
+                    android:textSize="13sp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/clock"/>
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="120 minutes"
+                    android:textColor="#B5AFAF"
+                    android:textSize="13sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/cinetype"/>
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IMAX"
+                    android:textColor="#B5AFAF"
+                    android:textSize="13sp" />
+            </LinearLayout>
+            <!-- Duration -->
+
+
+            <LinearLayout
+                android:id="@+id/sypnosisHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trivialHeader"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="30dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="Sypnosis"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Description (with Read More button) -->
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sypnosisHeader"
+
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:text="Movie description..."
+                android:textColor="#B8B6B6"
+                android:textSize="14sp" />
+
+            <!-- Read More Button (customize as needed) -->
+            <TextView
+                android:id="@+id/readMoreButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:text="Read More"
+                android:textColor="#036ffc"
+                android:textSize="16sp"
+                android:layout_marginHorizontal="30dp"/>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <!-- List of Dates -->
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/dateRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/movieInformation"
+    android:layout_marginTop="3dp"/>
+
+    <!-- List of Cinemas and Show Times (customize as needed) -->
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/cinemaShowTimeRecyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/dateRecyclerView"
+        android:visibility="invisible"
+    android:layout_marginTop="6dp"/>
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/myNextButton"
+        android:layout_marginRight="20dp"
+        android:padding="15dp"
+        android:src="@drawable/rightarrow"
+        android:background="@drawable/circle_selected"/>
+</RelativeLayout>
